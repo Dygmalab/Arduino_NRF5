@@ -14,6 +14,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
 #define ARDUINO_MAIN
+#include "dl_middleware.h"
 #include "Adafruit_TinyUSB_API.h"
 #include "Arduino.h"
 #include "KeyboardioHID.h"
@@ -40,6 +41,8 @@ int main(void)
 
         // Serial events
         //if (serialEvent && serialEventRun) serialEventRun();
+
+        mcu_sleep_control();
     }
 
     NVIC_SystemReset();  // Soft reset MCU.
