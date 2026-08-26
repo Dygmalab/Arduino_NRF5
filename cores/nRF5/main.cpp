@@ -24,7 +24,6 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 int main(void)
 {
     init();
-    setup();
 
     TinyUSBDevice.attach();
 #ifdef USE_TINYUSB
@@ -32,6 +31,8 @@ int main(void)
 #endif
     if(!Serial) Serial.begin(115200);
     RawHID.begin();
+
+    setup();
 
     while (1)
     {
